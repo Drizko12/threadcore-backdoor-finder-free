@@ -1,6 +1,6 @@
 # threadcore-backdoor-finder-free
 
-free version of threadcore backdoor finder, fully open source
+free version of threadcore backdoor finder, fully open source\n
 paid version eventually, updated frequently
 
 to use, run
