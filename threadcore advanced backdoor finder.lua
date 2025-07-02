@@ -4,6 +4,10 @@
 local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
 local IDEModule = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/lib/ide.lua'))()
 
+local BackdoorChecker = loadstring(game:HttpGet('https://raw.githubusercontent.com/Drizko12/threadcore-backdoor-finder-free/refs/heads/main/threadcore%20advanced%20backdoor%20finder%20handler.lua'))()
+
+print("loaded backdoor checker!")
+
 local Window = ReGui:Window({
 	Title = "threadcore backdoor finder -- 1.0.0 [free ver]",
 	Size = UDim2.fromOffset(700, 200)
@@ -16,10 +20,16 @@ Window:Button({
 	Callback = function()
 		-- check for backdoors here
         -- basic laodstring check
+        string value = BackdoorChecker:scanForBackdoors()
+        if value == 0
+            Window:Label({Text="no backdoors ;("})
+        else
+            Window:Label({Text="found backdoor! " .. value})
+        end
         sucessful_serversidedCodeExecution()
 	end,
 })
-Window:Label({Text="backdoor status here. if your game is frozen pls wait."})
+Window:Label({Text="if your game is frozen pls wait."})
 
 
 function sucessful_serversidedCodeExecution()
